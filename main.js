@@ -8,8 +8,6 @@ let valor = [];
 let operador = [];
 let resultado;
 
-// console.log(botoes);
-
 for (let i = 0; i < botoes.length; i++) {
   botoes[i].addEventListener("click", receberNumeros);
 }
@@ -30,13 +28,9 @@ function receberNumeros(e) {
     } else {
       valorDigitado += numero;
     }
-
-    console.log(valorDigitado);
   } else {
-    // let operadorDigitado = operadorCalc;
-    // visor.innerHTML += operadorDigitado;
     valorConvertido = parseFloat(valorDigitado);
-    console.log(valorConvertido);
+
     if (!isNaN(valorConvertido)) {
       if (valor.length === 0 || typeof valor[valor.length - 1] === "string") {
         valor.push(valorConvertido);
@@ -61,43 +55,35 @@ function receberNumeros(e) {
 
     valorDigitado = "";
   }
-
-  console.log(valor);
 }
 
 function operacoes() {
   for (let i = 0; i < valor.length; i++) {
     if (valor.includes("*") || valor.includes("/")) {
-      console.log(valor[i]);
       if (valor[i] === "*") {
-        console.log(valor[i]);
         let atual = i;
-        console.log("aqui é o atual", atual);
         let anterior = valor[i - 1];
         let posterior = valor[i + 1];
-        console.log("anterior: ", anterior);
-        console.log("Posterior: ", posterior);
+
         valor.splice(atual - 1, 3, parseFloat(anterior * posterior));
         i = 0;
       }
       if (valor[i] === "/") {
         let atual = i;
-        console.log("aqui é o atual", atual);
+
         let anterior = valor[i - 1];
         let posterior = valor[i + 1];
-        console.log("anterior: ", anterior);
-        console.log("Posterior: ", posterior);
+
         valor.splice(atual - 1, 3, parseFloat(anterior / posterior));
         i = 0;
       }
     } else {
       if (valor[i] === "+") {
         let atual = i;
-        console.log("Aqui é o atual", atual);
+
         let anterior = valor[i - 1];
         let posterior = valor[i + 1];
-        console.log("anterior ", anterior);
-        console.log("posterior", posterior);
+
         valor.splice(atual - 1, 3, parseFloat(anterior + posterior));
         i = 0;
       }
