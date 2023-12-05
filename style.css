@@ -1,0 +1,47 @@
+body {
+  background: rgb(184, 184, 184);
+}
+
+.calculadora-container {
+  width: 350px;
+  height: 440px;
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  border: 2px solid black;
+  border-radius: 8px;
+  gap: 30px;
+  background: rgb(219, 219, 219);
+  margin: auto;
+}
+
+.visor {
+  background: rgba(41, 41, 41, 0.932);
+  width: 300px;
+  height: 100px;
+  color: rgb(30, 143, 30);
+  justify-self: center;
+  border: 2px solid black;
+  margin-top: 30px;
+  font-size: 6rem;
+  display: grid;
+}
+
+.visor-numero {
+  place-self: end;
+}
+.calculadora-botoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 300px;
+  justify-self: center;
+  gap: 10px;
+  padding-bottom: 30px;
+}
+button {
+  background: rgb(165, 165, 165);
+  font-weight: 700;
+}
+.button-resultado {
+  grid-column: 4;
+  grid-row: 2 / 6;
+}
